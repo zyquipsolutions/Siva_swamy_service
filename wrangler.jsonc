@@ -1,0 +1,20 @@
+// Cloudflare Workers config. Run once: npx wrangler login
+// Add the API key as a SECRET (never in this file):  npx wrangler secret put GOOGLE_PLACES_API_KEY
+// Deploy:  npm run deploy
+{
+  "name": "siva-swamy-services",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-01-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
+  },
+  "vars": {
+    "GOOGLE_PLACE_ID": "",            // REPLACE with your Place ID, e.g. "ChIJ..."
+    "REVIEWS_CACHE_SECONDS": "600"    // short edge cache (10 min) to limit API calls; check Google's current caching terms
+  }
+  // "routes": [{ "pattern": "siva-swamy-services.com", "custom_domain": true }]  // REPLACE with your domain
+}
