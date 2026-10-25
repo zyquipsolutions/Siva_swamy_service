@@ -16,5 +16,5 @@
     "GOOGLE_PLACE_ID": "",            // REPLACE with your Place ID, e.g. "ChIJ..."
     "REVIEWS_CACHE_SECONDS": "600"    // short edge cache (10 min) to limit API calls; check Google's current caching terms
   }
-  // "routes": [{ "pattern": "siva-swamy-services.com", "custom_domain": true }]  // REPLACE with your domain
+  // "routes": [{ "pattern": "siva-swamy-service.com", "custom_domain": true }]  // REPLACE with your domain
 }

@@ -6,7 +6,7 @@
 // ============================================================================
 
 export const SITE = {
-  domain: 'https://siva-swamy-services.com',            // REPLACE with the real domain before publishing (no trailing slash)
+  domain: 'https://siva-swamy-service.com',            // REPLACE with the real domain before publishing (no trailing slash)
   name: 'Siva Swamy Services',
   shortName: 'Siva Swamy',
   description:

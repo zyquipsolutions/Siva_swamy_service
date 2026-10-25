@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://siva-swamy-services.com/sitemap.xml
+Sitemap: https://siva-swamy-service.com/sitemap.xml
