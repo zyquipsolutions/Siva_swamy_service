@@ -34,7 +34,7 @@ export const SITE = {
   rating: null,                                        // OPTIONAL real Google rating — hidden while null
   reviewCount: null,                                   // OPTIONAL
   founded: null,                                       // OPTIONAL year — hidden while null
-  web3formsKey: 'YOUR-WEB3FORMS-ACCESS-KEY',           // REPLACE (free key from web3forms.com, linked to sivaswamyservices@gmail.com)
+  web3formsKey: 'b9b75138-a34b-47ac-a198-64268ee05a2f',           // REPLACE (free key from web3forms.com, linked to sivaswamyservices@gmail.com)
   themeColor: '#064E50',
   logoFile: 'SSS_logo.png',                            // photos/SSS_logo.png — full logo in footer, menu, loader, link previews
   // Circular emblem for the header badge and favicon: [left, top, width, height] as fractions of the logo image.
