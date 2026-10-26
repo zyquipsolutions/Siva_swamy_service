@@ -9,7 +9,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import {
   SITE, PROPRIETOR, HIGHLIGHTS, STATS, WHY, STEPS, APPROACH, BRANDS, AUTHORISED, WORK_TYPES, SERVICES,
-  HOME_FAQS, PRICING_FAQS, SUPPLIED_AREAS, AREA_GROUPS, REVIEWS, SAMPLE_REVIEWS, GALLERY, BLOG,
+  HOME_FAQS, PRICING_FAQS, SUPPLIED_AREAS, AREA_GROUPS, REVIEWS, SAMPLE_REVIEWS, SAMPLE_REVIEW_GRID, GALLERY, BLOG,
 } from './data.mjs';
 import { PAGE_META, SERVICE_PAGES, POPULAR } from './seo-data.mjs';
 import { icon } from './icons.mjs';
@@ -671,6 +671,26 @@ const sampleCard = (r) => rvCard({ id: r.id, cat: r.category, name: r.name, init
   service: `${REVIEW_CAT_NAMES[r.category] || 'Appliance'} ${r.work.toLowerCase()}`, area: r.area, badge: 'Sample', badgeCls: 'rv-badge-sample', sample: true });
 const ownCard = (r, i) => rvCard({ id: `own-${i}`, cat: r.category || '', name: r.name, initial: r.name[0], rating: r.rating, text: r.text, service: r.appliance, area: r.area });
 
+const quoteMark = '<svg class="srv-quote" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M13 8c-4.4 1.6-7 5.2-7 10.2V24h7.4v-7.2H9.6c.1-2.9 1.6-5 4.4-6.2L13 8zm13 0c-4.4 1.6-7 5.2-7 10.2V24h7.4v-7.2h-3.8c.1-2.9 1.6-5 4.4-6.2L26 8z"/></svg>';
+const initials = (name) => name.split(/\s+/).map((w) => w[0]).join('').replace(/[^A-Za-z]/g, '').slice(0, 2).toUpperCase();
+const sampleGridCard = (r) => `<li class="srv-item"><article class="srv-card">
+  <div class="srv-top">
+    <span class="srv-avatar" aria-hidden="true">${esc(initials(r.name))}</span>
+    <div class="srv-who"><h4 class="srv-name">${esc(r.name)}</h4><p class="srv-topic">${esc(r.topic)}</p></div>
+    ${quoteMark}
+  </div>
+  ${starRow(r.rating)}
+  <p class="srv-text">${esc(r.text)}</p>
+</article></li>`;
+const sampleGrid = () => SAMPLE_REVIEW_GRID.length ? `
+  <section class="srv" aria-labelledby="srv-h">
+    <div class="srv-head">
+      <h3 id="srv-h">Sample Reviews</h3>
+      <p class="srv-note" role="note">${icon('shield', 'ic', 18)}<span><strong>For layout demonstration only.</strong> These are fictional examples, not verified customer testimonials and not Google reviews. Real customer reviews are on our Google listing.</span></p>
+    </div>
+    <ul class="srv-grid">${SAMPLE_REVIEW_GRID.map(sampleGridCard).join('')}</ul>
+  </section>` : '';
+
 function reviews() {
   const crumbs = [['Home', '/'], ['Reviews', '/reviews']];
   const samples = PREVIEW ? SAMPLE_REVIEWS : [];
@@ -714,6 +734,7 @@ ${PREVIEW ? `<div class="preview-bar" role="note"><div class="wrap">${icon('shie
     <div class="btn-row"><a class="btn btn-primary" href="${SITE.googleMapsLink}" ${ext}>${icon('star', 'ic', 18)} Read All Reviews on Google</a>${writeReviewUrl ? `<a class="btn btn-ghost" href="${writeReviewUrl}" ${ext}>Write a Google Review</a>` : ''}</div>
   </div>
   <p class="rv-attrib" id="rv-attrib" hidden>Reviews from <strong>Google</strong>. Reviewer names link to their Google profiles. <span id="rv-updated"></span></p>
+  ${sampleGrid()}
 </div></section>
 
 <section class="sec sec-white"><div class="wrap rv-cta-grid">

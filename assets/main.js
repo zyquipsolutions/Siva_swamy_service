@@ -64,7 +64,7 @@
 
   /* ---------- subtle reveal ---------- */
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var targets = $$('.sec .sec-head, .svc-cards, .timeline, .process-photo, .stat-row, .why-grid, .area-cols, .price-table, .masonry, .desk-in, .values, .offer-grid, .svc-sec-img, .brand-grid, .g-preview, .post-list');
+    var targets = $$('.sec .sec-head, .svc-cards, .timeline, .process-photo, .stat-row, .why-grid, .area-cols, .price-table, .masonry, .desk-in, .values, .offer-grid, .svc-sec-img, .brand-grid, .g-preview, .post-list, .srv-grid');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { rootMargin: '0px 0px -8% 0px' });

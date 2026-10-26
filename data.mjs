@@ -412,3 +412,22 @@ export const SAMPLE_REVIEWS = [
   { id: 'sample-8', name: 'Mohan P.', area: 'Kilpauk', rating: 5, date: '2026-08-21', category: 'kitchen-hood', work: 'Repair',
     text: 'The lights and touch panel on our cylinder hood stopped responding. A loose connector was found, the panel was reset, and everything has worked properly since.' },
 ];
+
+export const SAMPLE_REVIEW_GRID = [
+  { name: 'Lakshmi R.', rating: 5, topic: 'Kitchen chimney',
+    text: 'The technician arrived on time, removed the filters and cleaned the blower thoroughly. Our kitchen no longer smells of oil after frying.' },
+  { name: 'Arun P.', rating: 5, topic: 'Water heater',
+    text: 'The heater was giving only lukewarm water. He found a faulty thermostat, replaced it the same day and checked the earthing before leaving.' },
+  { name: 'Meena S.', rating: 5, topic: 'Kitchen hob',
+    text: 'One burner would not light at all. After servicing, every burner sparks first time and the flame is a steady blue again.' },
+  { name: 'Karthik V.', rating: 4, topic: 'Customer support',
+    text: 'I sent photos of my chimney on WhatsApp and got a clear reply within the hour. The visit time was confirmed the evening before.' },
+  { name: 'Priya N.', rating: 5, topic: 'Kitchen chimney',
+    text: 'Our new auto-clean chimney was fitted neatly with a short duct line. He showed us how to use the oil collector and the clean mode.' },
+  { name: 'Suresh G.', rating: 5, topic: 'Water heater',
+    text: 'A water leak near the inlet turned out to be a worn valve. The replacement was quick and the bathroom wall was left dry and clean.' },
+  { name: 'Anitha K.', rating: 4, topic: 'Kitchen hob',
+    text: 'The glass top hob had weak burners. The jets were cleaned and the gas line was checked for leaks. A small fault, explained simply.' },
+  { name: 'Vignesh M.', rating: 5, topic: 'Customer support',
+    text: 'Polite on the phone and honest about the charges up front. When I had a follow-up question, they called back the same day.' },
+];
